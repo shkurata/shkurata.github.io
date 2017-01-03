@@ -89,6 +89,10 @@ body {
           justify-content: center;
           align-items: center;
           height: 100%;
+          &.activeNavItem {
+            font-weight: bold;
+            border-bottom: 2px solid white;
+          }
           @include setLinkStyle {
             color: white;
           }
