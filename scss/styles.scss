@@ -1,0 +1,197 @@
+$font-family: Roboto;
+$font-size: 16px;
+$bg-color: rgba(27, 24, 24, 0.7);
+$line-height: 1.2em;
+$navbar-size: 50px;
+$page-size: 800px;
+
+// @mixin landscape {
+//     @media screen and (max-device-width: 736px)
+//                   and (orientation: landscape) {
+//       @content;
+//     }
+// }
+@mixin landscape {
+    @media screen and (orientation: landscape) {
+      @content;
+    }
+}
+
+@mixin middle {
+  @media screen and (min-width: 590px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 990px) {
+    @content;
+  }
+}
+
+@mixin setLinkStyle {
+  &:hover, &:link, &:active, &:visited {
+        @content;
+    }
+}
+@mixin filter($filter-type,$filter-amount) {
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+.zero-space {
+  margin: 0;
+  padding: 0;
+}
+
+.full-space {
+  width: 100%;
+  height: 100%;
+}
+
+html, body {
+  @extend .zero-space;
+  @extend .full-space;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  nav {
+    height: $navbar-size;
+    width: 100%;
+    background-color: $bg-color;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    @include landscape {
+      height: $page-size;
+      width: $navbar-size;
+      left: 0;
+    }
+    ul {
+      @extend .zero-space;
+      text-align: right;
+      list-style-type: none;
+      @include landscape {
+        margin-left: -2px;
+        margin-top: 50px;
+        text-align: center;
+      }
+      li {
+        display: inline-block;
+        margin: 5px;
+        height: $navbar-size - 10;
+        a {
+          display: flex;
+          text-decoration: none;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          @include setLinkStyle {
+            color: white;
+          }
+          .fa {
+            display: none;
+            @include landscape {
+              display: inherit;
+            }
+          }
+          span {
+            @include landscape {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  #imgBg {
+    z-index: -1000;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include filter(brightness, 60%);
+  }
+  main {
+    margin-top: $navbar-size;
+    @include landscape {
+      margin-top: 0;
+      margin-left: $navbar-size;
+    }
+  }
+  section {
+
+      width: 90%;
+      // height: $page-size;
+      margin: auto;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      &:not(:first-child) {
+        background-color: $bg-color;
+      }
+      color: white;
+      text-align: center;
+      &:first-child {
+        padding-top: 250px;
+        height: $page-size;
+      }
+      .collection {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        .case {
+          // border: 1px solid white;
+          width: 100%;
+          // height: 100%;
+          // max-width: 450px;
+          // height: 300px;
+          @include middle {
+              width: 50%;
+          }
+          @include large {
+            width: 33.33%;
+          }
+          margin: 10px auto;
+          position: relative;
+          img {
+            width: 95%;
+            height: auto;
+          }
+          p {
+            font-size: 2em;
+            position: absolute;
+            height: 10px;
+            margin: auto;
+            top: 0; left: 0; bottom: 0; right: 0;
+            visibility: hidden;
+            @include middle {
+              font-size: 1.5em;
+            }
+          }
+          &:hover {
+            p {
+              visibility: visible;
+              z-index: 90;
+            }
+            img {
+              @include filter(brightness, 40%);
+            }
+          }
+
+        }
+      }
+  }
+}
+
+.navAside {
+  height: $page-size;
+  width: $navbar-size;
+  left: 0;
+}
