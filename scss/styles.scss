@@ -141,7 +141,7 @@ body {
 
       width: 90%;
       // height: $page-size;
-      margin: auto;
+      margin: 20px auto;
       padding-top: 1px;
       padding-bottom: 1px;
       &:not(:first-child) {
@@ -175,10 +175,7 @@ body {
           }
           margin: 10px auto;
           position: relative;
-          img {
-            width: 95%;
-            height: auto;
-          }
+
           p {
             font-size: 2em;
             position: absolute;
@@ -203,6 +200,11 @@ body {
         }
       }
   }
+}
+
+img {
+  width: 95%;
+  height: auto;
 }
 
 .navAside {
