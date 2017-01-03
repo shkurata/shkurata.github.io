@@ -1,7 +1,7 @@
 $font-family: Roboto;
 $font-size: 16px;
 $bg-color: rgba(27, 24, 24, 0.7);
-$line-height: 1.2em;
+$line-height: 1.7em;// old value 1.2em
 $navbar-size: 50px;
 $page-size: 800px;
 
@@ -15,6 +15,12 @@ $page-size: 800px;
     @media screen and (orientation: landscape) {
       @content;
     }
+}
+
+@mixin mini {
+  @media screen and (max-width: 390px) {
+    @content;
+  }
 }
 
 @mixin middle {
@@ -57,7 +63,7 @@ html, body {
 body {
   font-family: $font-family;
   font-size: $font-size;
-  line-height: $line-height;
+  // line-height: $line-height;
   nav {
     height: $navbar-size;
     width: 100%;
@@ -73,6 +79,7 @@ body {
     ul {
       @extend .zero-space;
       // text-align: right;
+      float: right;
       list-style-type: none;
       @include landscape {
         margin-left: -2px;
@@ -80,13 +87,15 @@ body {
         text-align: center;
       }
       li {
-        float: right;
         &:first-child {
           float: left;
-          @include landscape {
-            position: absolute;
-            top: 0;
-            left: 5px;
+          position: absolute;
+          top: 0;
+          left: 5px;
+        }
+        @include mini {
+          &:not(:first-child) {
+            display: none;
           }
         }
         display: inline-block;
@@ -98,12 +107,16 @@ body {
           justify-content: center;
           align-items: center;
           height: 100%;
-          &.activeNavItem {
-            font-weight: bold;
-            border-bottom: 2px solid white;
-          }
+
           @include setLinkStyle {
             color: white;
+            opacity: 0.7;
+          }
+
+          &.activeNavItem {
+            font-weight: bold;
+            opacity: 1;
+            // border-bottom: 2px solid white;
           }
           .fa {
             display: none;
