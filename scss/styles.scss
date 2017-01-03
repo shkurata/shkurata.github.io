@@ -80,6 +80,14 @@ body {
         text-align: center;
       }
       li {
+        &:first-child {
+          float: left;
+          @include landscape {
+            position: absolute;
+            top: 0;
+            left: 5px;
+          }
+        }
         display: inline-block;
         margin: 5px;
         height: $navbar-size - 10;
@@ -158,6 +166,9 @@ body {
           // height: 300px;
           @include middle {
               width: 50%;
+              &:last-child {
+                width: 100%;
+              }
           }
           @include large {
             width: 33.33%;
