@@ -30,7 +30,7 @@ $(document).ready(function() {
         event.preventDefault();
         $.ajax({
             url: "../mail/contact_me.php",
-            type: "POST",
+            type: "GET",
             data: {
                 name: name,
                 phone: phone,
