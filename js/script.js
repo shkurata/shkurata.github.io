@@ -41,8 +41,8 @@ $(document).ready(function() {
             success: function() {
               alert('success');
             },
-            error: function() {
-              alert('error');
+            error: function(error) {
+              alert(error.responseText);
             }
           });
         // $('#sendMessage')
