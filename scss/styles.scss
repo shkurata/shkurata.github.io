@@ -24,7 +24,7 @@ $page-size: 800px;
 }
 
 @mixin middle {
-  @media screen and (min-width: 590px) {
+  @media screen and (min-width: 590px) and (max-width: 989px) {
     @content;
   }
 }
@@ -95,7 +95,12 @@ body {
         }
         @include mini {
           &:not(:first-child) {
-            display: none;
+            & span {
+              display: none;
+            }
+            & .fa {
+              display: inherit;
+            }
           }
         }
         display: inline-block;
@@ -114,7 +119,7 @@ body {
           }
 
           &.activeNavItem {
-            font-weight: bold;
+            // font-weight: bold;
             opacity: 1;
             // border-bottom: 2px solid white;
           }
@@ -156,8 +161,9 @@ body {
       width: 90%;
       // height: $page-size;
       margin: 20px auto;
-      padding-top: 1px;
-      padding-bottom: 1px;
+      // padding-top: 1px;
+      // padding-bottom: 5px;
+      padding: 10px;
       &:not(:first-child) {
         background-color: $bg-color;
       }
@@ -216,9 +222,49 @@ body {
   }
 }
 
+form {
+  text-align: left;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  input, textarea {
+    margin-bottom: 18px;
+    margin-top: 5px;
+    width: 92%;
+    background-color: inherit;
+    color: inherit;
+    font-size: 1.5em;
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  input[type='submit'] {
+    width: 100px;
+    margin: 5px auto;
+ }
+  div {
+    position: relative;
+    width: 100%;
+    @include large {
+      &:not(:last-child) {
+        width: 50%;
+      }
+    }
+  }
+}
+
 img {
   width: 95%;
   height: auto;
+}
+
+img#me {
+  max-width: 400px;
+}
+
+.error {
+   display: none;
 }
 
 .navAside {

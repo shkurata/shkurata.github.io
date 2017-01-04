@@ -9,18 +9,25 @@ $(document).ready(function() {
 
   $(window).on('scroll', function() {
     var currentPossition = $(this).scrollTop();
-
     $('section').each(function() {
       var top = $(this).offset().top - $('nav').outerHeight(),
       bottom = top + $(this).outerHeight();
-
       if (currentPossition >= top && currentPossition <= bottom) {
         $('nav').find('a').removeClass('activeNavItem');
         $('nav').find('a[href="#' + $(this).attr('id') + '"]')
           .toggleClass('activeNavItem');
       }
-
     });
   });
+
+  // $('#submit input').on('click', function(event) {
+  //   var form = $('#sendMessage');
+  //     if ($(this).closest('form')[0].checkValidity()) {
+  //       event.preventDefault();
+  //
+  //       $('#sendMessage').attr('action', 'https://formspree.io/nikolai.neikov@gmail.com').submit();
+  //       alert('submit clicked');
+  //   }
+  // });
 
 });
