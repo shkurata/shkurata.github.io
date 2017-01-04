@@ -20,14 +20,36 @@ $(document).ready(function() {
     });
   });
 
-  // $('#submit input').on('click', function(event) {
-  //   var form = $('#sendMessage');
-  //     if ($(this).closest('form')[0].checkValidity()) {
-  //       event.preventDefault();
-  //
-  //       $('#sendMessage').attr('action', 'https://formspree.io/nikolai.neikov@gmail.com').submit();
-  //       alert('submit clicked');
-  //   }
-  // });
+  $('#submit input').on('click', function(event) {
+    var form = $('#sendMessage');
+    var name = $('input[name=\'name\']').val();
+    var email = $("input[name='email']").val();
+    var phone = $("input[name='phone']").val();
+    var message = $("textarea[name='message']").val();
+      if ($(this).closest('form')[0].checkValidity()) {
+        event.preventDefault();
+        $.ajax({
+            url: "../mail/contact_me.php",
+            type: "POST",
+            data: {
+                name: name,
+                phone: phone,
+                email: email,
+                message: message
+            },
+            cache: false,
+            success: function() {
+              alert('success');
+            },
+            error: function() {
+              alert('error');
+            }
+          });
+        // $('#sendMessage')
+        // .attr('action', 'https://formspree.io/nikolai.neikov@gmail.com')
+        // .submit();
+        //alert('submit clicked');
+    }
+  });
 
 });
