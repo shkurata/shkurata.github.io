@@ -12,7 +12,7 @@ $(document).ready(function() {
   $(window).on('scroll', function() {
     var currentPossition = $(this).scrollTop();
     $('section').each(function() {
-      var top = $(this).offset().top - $('nav').outerHeight() - window.height / 2,
+      var top = $(this).offset().top - $('nav').outerHeight() - $(window).height() / 2,
       bottom = top + $(this).outerHeight();
       if (currentPossition >= top && currentPossition <= bottom) {
         $('nav').find('a').removeClass('activeNavItem');
