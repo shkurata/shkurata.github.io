@@ -12,7 +12,7 @@
     <script src="js/script.js"></script>
   </head>
   <body>
-    <img src="https://images.unsplash.com/photo-1429051883746-afd9d56fbdaf?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" id="imgBg" />
+    <img src="images/bg-image.jpeg" id="imgBg" />
       <nav>
       <ul>
         <li><a href="#home" class="activeNavItem">
@@ -48,25 +48,25 @@
           <div class="case">
               <p>Game of Life</p>
               <a href="http://codepen.io/shkurata/full/ObowRr/" target="_blank">
-                <img src="images/game_of_life.png" />
+                <img src="images/game_of_life.jpg" />
               </a>
           </div>
           <div class="case">
               <p>Calculator</p>
               <a href="http://codepen.io/shkurata/full/BjNxbN/">
-                <img src="images/calculator.png" />
+                <img src="images/calculator.jpg" />
               </a>
           </div>
           <div class="case">
               <p>Camper Leaderboard</p>
               <a href="https://codepen.io/shkurata/full/LNvZOq/">
-                <img src="images/leader_board.png" />
+                <img src="images/leader_board.jpg" />
               </a>
           </div>
           <div class="case">
               <p>Pomodoro Clock</p>
               <a href="http://codepen.io/shkurata/full/PPMepW/">
-                <img src="images/pomodoro.png" />
+                <img src="images/pomodoro.jpg" />
               </a>
           </div>
           <div class="case">
@@ -84,17 +84,17 @@
           <div class="case">
               <p>Tic Tac Toe Game</p>
               <a href="http://codepen.io/shkurata/full/OMQQvw/">
-                <img src="images/tic_tac_toe.png" />
+                <img src="images/tic_tac_toe.jpg" />
               </a>
           </div><div class="case">
               <p>Twitch Streamers</p>
               <a href="http://codepen.io/shkurata/full/RrjaEd/">
-                <img src="images/twitch_streamers.png" />
+                <img src="images/twitch_streamers.jpg" />
               </a>
           </div><div class="case">
               <p>Wikipedia Viewer</p>
               <a href="http://codepen.io/shkurata/full/ZQLPNL/">
-                <img src="images/wiki_search.png" />
+                <img src="images/wiki_search.jpg" />
               </a>
           </div>
         </div>
@@ -109,20 +109,24 @@
           <div id="nameAndEmail">
             <label for="name">Name</label>
             <input type="text" name="name" required>
-            <p class="error">Name must be at least 3 charachters long</p>
             <label for="email">Email</label>
             <input type="email" name="email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required>
-            <p class="error">Please, enter a valid email address</p>
             <label for="phone">Phone Number</label>
             <input type="text" name="number">
+            <input type="hidden" name="_subject" value="Portfolio website contact"/>
+            <input type="text" name="_gotcha" style="display:none" />
           </div>
           <div id="message">
             <label for="message">Message</label>
             <textarea name="message" rows="7" cols="50" required></textarea>
-            <p class="error">Messaage cannot be empty</p>
           </div>
           <div id="submit">
             <input type="submit" value="Send">
+            <div id="info">
+                <div class="error">Ops, there was an error.</div>
+                <div class="success">Message sent!</div>
+                <div class="send">Sending message...</div>
+            </div>
           </div>
         </form>
       </section>

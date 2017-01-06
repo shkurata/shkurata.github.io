@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('nav ul li a').on('click', function(event){
     event.preventDefault();
     $('html,body').animate({
-      scrollTop: $(this.hash).offset().top
+      scrollTop: $(this.hash).offset().top - $('nav').outerHeight() - 10
     }, 500);
   });
 
@@ -20,36 +20,29 @@ $(document).ready(function() {
     });
   });
 
-  $('#submit input').on('click', function(event) {
-    var form = $('#sendMessage');
-    var name = $('input[name=\'name\']').val();
-    var email = $("input[name='email']").val();
-    var phone = $("input[name='phone']").val();
-    var message = $("textarea[name='message']").val();
-      if ($(this).closest('form')[0].checkValidity()) {
-        event.preventDefault();
-        $.ajax({
-            url: "../mail/contact_me.php",
-            type: "GET",
-            data: {
-                name: name,
-                phone: phone,
-                email: email,
-                message: message
-            },
-            cache: false,
-            success: function() {
-              alert('success');
-            },
-            error: function(error) {
-              alert(error.responseText);
-            }
-          });
-        // $('#sendMessage')
-        // .attr('action', 'https://formspree.io/nikolai.neikov@gmail.com')
-        // .submit();
-        //alert('submit clicked');
-    }
+  var $form = $('#sendMessage');
+  $form.submit(function(e) {
+  	e.preventDefault();
+  	$.ajax({
+  		url: 'https://formspree.io/nikolai.neikov@gmail.com',
+  		method: 'POST',
+  		data: $(this).serialize(),
+  		dataType: 'json',
+  		beforeSend: function() {
+        $('#info').children().each(function() {
+          $(this).hide();
+        });
+        $('div.send').show();
+  		},
+  		success: function(data) {
+        $form.trigger('reset');
+        $('div.send').hide();
+        $('div.success').show();
+  		},
+  		error: function(err) {
+        $('div.send').hide();
+        $('div.error').show();
+  		}
+    });
   });
-
 });
