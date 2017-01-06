@@ -4,6 +4,12 @@ $(document).ready(function() {
     return $('nav').outerHeight() > 60 ? 0 : $('nav').outerHeight();
   }
 
+  $(window).on('load resize', function() {
+    var vpHeight = $(window).height();
+    $('#home').css('height', vpHeight);
+    $('#home h1').css('margin-top', vpHeight / 2 - 60);
+  });
+
   $('nav ul li a').on('click', function(event){
     event.preventDefault();
     $('html,body').animate({

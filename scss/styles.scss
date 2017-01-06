@@ -168,8 +168,11 @@ body {
       color: white;
       text-align: center;
       &:first-child {
-        padding-top: 250px;
+        // padding-top: 250px;
         height: $page-size;
+        h1 {
+          margin-top: 250px;
+        }
       }
       .collection {
         width: 90%;
