@@ -11,11 +11,6 @@ $page-size: 800px;
       @content;
     }
 }
-// @mixin landscape {
-//     @media screen and (orientation: landscape) {
-//       @content;
-//     }
-// }
 
 @mixin mini {
   @media screen and (max-width: 390px) {
@@ -101,16 +96,6 @@ body {
             }
           }
         }
-        // @include mini {
-        //   &:not(:first-child) {
-        //     & span {
-        //       display: none;
-        //     }
-        //     & .fa {
-        //       display: inherit;
-        //     }
-        //   }
-        // }
         display: inline-block;
         margin: 5px;
         height: $navbar-size - 10;
@@ -204,15 +189,15 @@ body {
           position: relative;
 
           p {
-            font-size: 2em;
+            font-size: 1.5em;
             position: absolute;
             height: 10px;
             margin: auto;
-            top: 0; left: 0; bottom: 0; right: 0;
+            top: -30px; left: 0; bottom: 0; right: 0;
             visibility: hidden;
-            @include middle {
-              font-size: 1.5em;
-            }
+            // @include mini {
+            //   font-size: 2em;
+            // }
           }
           &:hover {
             p {
