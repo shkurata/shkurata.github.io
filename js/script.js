@@ -1,18 +1,20 @@
 $(document).ready(function() {
 
+  function navSize() {
+    return $('nav').outerHeight() > 60 ? 0 : $('nav').outerHeight();
+  }
+
   $('nav ul li a').on('click', function(event){
-    var $navHeight = $('nav').outerHeight();
-    var $navSize = $navHeight > 60 ? 0 : $navHeight;
     event.preventDefault();
     $('html,body').animate({
-      scrollTop: $(this.hash).offset().top - $navSize - 20
+      scrollTop: $(this.hash).offset().top - navSize() - 20
     }, 500);
   });
 
   $(window).on('scroll', function() {
     var currentPossition = $(this).scrollTop();
     $('section').each(function() {
-      var top = $(this).offset().top - $('nav').outerHeight() - $(window).height() / 2,
+      var top = $(this).offset().top - navSize() - $(window).height() / 2,
       bottom = top + $(this).outerHeight();
       if (currentPossition >= top && currentPossition <= bottom) {
         $('nav').find('a').removeClass('activeNavItem');
