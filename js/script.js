@@ -1,16 +1,18 @@
 $(document).ready(function() {
 
   $('nav ul li a').on('click', function(event){
+    var $navHeight = $('nav').outerHeight();
+    var $navSize = $navHeight > 60 ? 0 : $navHeight;
     event.preventDefault();
     $('html,body').animate({
-      scrollTop: $(this.hash).offset().top - $('nav').outerHeight() - 10
+      scrollTop: $(this.hash).offset().top - $navSize - 20
     }, 500);
   });
 
   $(window).on('scroll', function() {
     var currentPossition = $(this).scrollTop();
     $('section').each(function() {
-      var top = $(this).offset().top - $('nav').outerHeight(),
+      var top = $(this).offset().top - $('nav').outerHeight() - window.height / 2,
       bottom = top + $(this).outerHeight();
       if (currentPossition >= top && currentPossition <= bottom) {
         $('nav').find('a').removeClass('activeNavItem');

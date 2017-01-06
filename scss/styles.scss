@@ -12,6 +12,12 @@ $page-size: 800px;
     }
 }
 
+// @mixin landscape {
+//     @media screen and (orientation: landscape) {
+//       @content;
+//     }
+// }
+
 @mixin mini {
   @media screen and (max-width: 390px) {
     @content;
