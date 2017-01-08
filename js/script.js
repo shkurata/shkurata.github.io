@@ -10,11 +10,15 @@ $(document).ready(function() {
     $('#home h1').css('margin-top', vpHeight / 2 - 60);
   });
 
+  function moveToSection($section) {
+    $('html,body').animate({
+      scrollTop: $section.offset().top - navSize() - 20
+    }, 500);
+  }
+
   $('nav ul li a').on('click', function(event){
     event.preventDefault();
-    $('html,body').animate({
-      scrollTop: $(this.hash).offset().top - navSize() - 20
-    }, 500);
+    moveToSection($(this.hash));
   });
 
   $(window).on('scroll', function() {
