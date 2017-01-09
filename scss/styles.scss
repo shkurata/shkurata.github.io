@@ -1,4 +1,4 @@
-$font-family: Roboto;
+$font-family: Futura;//Optima; //Roboto;
 $font-size: 16px;
 $bg-color: rgba(27, 24, 24, 0.7);
 $line-height: 1.7em;// old value 1.2em
@@ -167,19 +167,14 @@ body {
       }
       color: white;
       text-align: center;
-      &:first-child {
-        // padding-top: 250px;
-        height: $page-size;
-        h1 {
-          margin-top: 250px;
-        }
-      }
+      // &:first-child {
+      //   height: $page-size;
+      //   h1 {
+      //     margin-top: 250px;
+      //   }
+      // }
       article {
-        display: block;
-        p {
-          margin: 20px auto;
-          width: 80%;
-        }
+        //display: block;
         img {
           width: 80%;
         }
@@ -272,8 +267,6 @@ img {
   height: auto;
 }
 
-
-
 #info {
   width: 60%;
   margin: 5px 35px;
@@ -289,6 +282,14 @@ img {
       line-height: 0.8em;
     }
   }
+}
+
+p {
+  width: 80%;
+  margin: 20px auto;
+  font-size: 1.4em;
+  //font-family: Optima;
+  //font-style: italic;
 }
 
 .error {
