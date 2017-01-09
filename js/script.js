@@ -7,7 +7,7 @@ $(document).ready(function() {
   $(window).on('load resize', function() {
     var vpHeight = $(window).height();
     $('#home').css('height', vpHeight);
-    $('#home h1').css('margin-top', vpHeight / 2 - 60);
+    $('#home h1').css('margin-top', vpHeight / 2 - 100);
   });
 
   function moveToSection($section) {

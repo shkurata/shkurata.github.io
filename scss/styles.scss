@@ -25,7 +25,7 @@ $page-size: 800px;
 }
 
 @mixin middle {
-  @media screen and (min-width: 590px) and (max-width: 989px) {
+  @media screen and (min-width: 590px) {
     @content;
   }
 }
@@ -36,11 +36,11 @@ $page-size: 800px;
   }
 }
 
-@mixin setLinkStyle {
-  &:hover, &:link, &:active, &:visited {
-        @content;
-    }
-}
+// @mixin setLinkStyle {
+//   &:hover, &:link, &:active, &:visited {
+//         @content;
+//     }
+// }
 @mixin filter($filter-type,$filter-amount) {
   -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
   filter: $filter-type+unquote('(#{$filter-amount})');
@@ -64,7 +64,20 @@ html, body {
 body {
   font-family: $font-family;
   font-size: $font-size;
-  // line-height: $line-height;
+  /* stop users from being able to select text */
+
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+
+  -moz-user-select: none;
+  /* Firefox */
+
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+
+  -o-user-select: none;
+  user-select: none;
   nav {
     height: $navbar-size;
     width: 100%;
@@ -107,15 +120,15 @@ body {
         height: $navbar-size - 10;
         a {
           display: flex;
-          text-decoration: none;
+          //text-decoration: none;
           justify-content: center;
           align-items: center;
           height: 100%;
 
-          @include setLinkStyle {
-            color: white;
-            opacity: 0.7;
-          }
+          // @include setLinkStyle {
+          //   color: white;
+          //   opacity: 0.7;
+          // }
 
           &.activeNavItem {
             // font-weight: bold;
@@ -191,13 +204,16 @@ body {
           // max-width: 450px;
           // height: 300px;
           @include middle {
-              width: 50%;
-              &:last-child {
-                width: 100%;
-              }
+            width: 50%;
+            &:last-child {
+              width: 100%;
+            }
           }
           @include large {
             width: 33.33%;
+            &:last-child {
+              width: 33.3%;
+            }
           }
           margin: 10px auto;
           position: relative;
@@ -222,10 +238,26 @@ body {
               @include filter(brightness, 40%);
             }
           }
-
+        }
+      }
+      &.footer {
+        //height: 60px;
+        padding-top: 30px;
+        a {
+            margin:10px;
+          //   @include setLinkStyle {
+          //     color: white;
+          //     opacity: 0.7;
+          // }
         }
       }
   }
+}
+
+a, a:hover, a:link, a:active, a:visited {
+  color: white;
+  opacity: 0.7;
+  text-decoration: none;
 }
 
 form {
@@ -287,7 +319,11 @@ img {
 p {
   width: 80%;
   margin: 20px auto;
-  font-size: 1.4em;
+  opacity: 0.7;
+  @include middle {
+    font-size: 1.3em;
+  }
+  //font-size: 1.4em;
   //font-family: Optima;
   //font-style: italic;
 }
