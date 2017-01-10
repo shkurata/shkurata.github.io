@@ -227,7 +227,6 @@ body {
           }
           margin: 10px auto;
           position: relative;
-
           p {
             font-size: 1.5em;
             position: absolute;
@@ -264,16 +263,16 @@ body {
           }
         }
       }
-      .footer {
+      &.footer {
         padding-top: 30px;
         a {
-            margin:10px;
+            margin: 10px;
             &:hover {
               opacity: 1;
             }
-        }
+         }
       }
-  }
+   }
 }
 
 a, a:hover, a:link, a:active, a:visited {
@@ -290,9 +289,9 @@ form {
   flex-wrap: wrap;
   justify-content: flex-start;
   input, textarea {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     margin-top: 5px;
-    width: 92%;
+    width: 93%;
     background-color: inherit;
     color: inherit;
     font-size: 1.5em;
