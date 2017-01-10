@@ -12,6 +12,7 @@ $(document).ready(function() {
       bottom: '5px',
       left: $(window).width() / 2 - 35
     });
+    $('#home > *').show();
   });
 
   function moveToSection($section) {

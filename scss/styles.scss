@@ -5,18 +5,18 @@ $line-height: 1.7em;// old value 1.2em
 $navbar-size: 50px;
 $page-size: 800px;
 
-// @mixin landscape {
-//     @media screen and (max-device-width: 736px)
-//                   and (orientation: landscape) {
-//       @content;
-//     }
-// }
-
 @mixin landscape {
-    @media screen and (orientation: landscape) {
+    @media screen and (max-device-width: 736px)
+                  and (orientation: landscape) {
       @content;
     }
 }
+
+// @mixin landscape {
+//     @media screen and (orientation: landscape) {
+//       @content;
+//     }
+// }
 
 @mixin mini {
   @media screen and (max-width: 390px) {
@@ -46,7 +46,22 @@ $page-size: 800px;
   filter: $filter-type+unquote('(#{$filter-amount})');
 }
 
-@keyframes moveDown {
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+      @content;
+  }
+  @-moz-keyframes #{$name} {
+      @content;
+  }
+  @-o-keyframes #{$name} {
+      @content;
+  }
+  @keyframes #{$name} {
+      @content;
+  }
+}
+
+@include keyframes(moveDown)  {
   0% {
     top: 0;
   }
@@ -177,6 +192,7 @@ body {
   }
   section {
       width: 90%;
+      max-width: 1200px;
       // height: $page-size;
       margin: 20px auto;
       // padding-top: 1px;
@@ -184,23 +200,35 @@ body {
       padding: 10px;
       &:first-child {
         height: 800px;
+        & > * {
+          display: none;
+        }
       }
       &:not(:first-child) {
         background-color: $bg-color;
       }
       color: white;
       text-align: center;
-      // &:first-child {
-      //   height: $page-size;
-      //   h1 {
-      //     margin-top: 250px;
-      //   }
-      // }
       article {
-        //display: block;
-        img {
-          width: 80%;
+        h1 {
+          font-size: 1.5em;
         }
+        & > *:not(:first-child) {
+          // display: flex;
+          // flex-wrap: wrap;
+          width: 80%;
+          display: inline-block;
+          vertical-align: middle;
+          @include large {
+            margin: 20px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            width: 40%;
+          }
+        }
+      }
+      & a p {
+        margin-top: 10px;
       }
       .collection {
         width: 90%;
@@ -264,11 +292,11 @@ body {
           animation: moveDown 1s ease-in-out infinite;
           &:hover {
             opacity: 1;
-            animation-play-state: paused;
+            //animation-play-state: paused;
           }
         }
       }
-      &.footer {
+      .footer {
         //height: 60px;
         padding-top: 30px;
         a {
