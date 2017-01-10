@@ -8,6 +8,10 @@ $(document).ready(function() {
     var vpHeight = $(window).height();
     $('#home').css('height', vpHeight);
     $('#home h1').css('margin-top', vpHeight / 2 - 100);
+    $('.arrow').css({
+      bottom: '5px',
+      left: $(window).width() / 2 - 35
+    });
   });
 
   function moveToSection($section) {
@@ -19,6 +23,10 @@ $(document).ready(function() {
   $('nav ul li a').on('click', function(event){
     event.preventDefault();
     moveToSection($(this.hash));
+  });
+
+  $('.arrow').on('click', function() {
+    moveToSection($('#portfolio'));
   });
 
   $(window).on('scroll', function() {
