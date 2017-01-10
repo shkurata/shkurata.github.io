@@ -9,8 +9,8 @@ $(document).ready(function() {
     $('#home').css('height', vpHeight);
     $('#home h1').css('margin-top', vpHeight / 2 - 100);
     $('.arrow').css({
-      bottom: '5px',
-      left: $(window).width() / 2 - 35
+      bottom: '0',
+      left: $(window).width() / 2 - 35 + (navSize() > 0 ? 0 : 25)
     });
     $('#home > *').show();
   });

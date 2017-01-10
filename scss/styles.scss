@@ -52,7 +52,7 @@ $page-size: 800px;
 
 @include keyframes(moveDown)  {
   0% {
-    top: 0;
+    top: 10px;
   }
   100% {
     top: 50px;
@@ -88,6 +88,11 @@ body {
   -o-user-select: none;
   user-select: none;
   /* end of copy-stop code    */
+  @include mini {
+    h1 {
+      font-size: 120%;
+    }
+  }
   nav {
     height: $navbar-size;
     width: 100%;
@@ -190,6 +195,12 @@ body {
       article {
         h1 {
           font-size: 1.5em;
+          @include mini {
+            font-size: 110%;
+            & {
+              margin-top: 8px;
+            }
+          }
         }
         & > *:not(:first-child) {
           width: 80%;
@@ -261,6 +272,9 @@ body {
           &:hover {
             opacity: 1;
           }
+          @include mini, landscape{
+            zoom: 90%;
+          }
         }
       }
       &.footer {
@@ -270,6 +284,12 @@ body {
             &:hover {
               opacity: 1;
             }
+         }
+         @include mini {
+           padding-top: 10px;
+           p {
+             margin-top: 5px;
+           }
          }
       }
    }
