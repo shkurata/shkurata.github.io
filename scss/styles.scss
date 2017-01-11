@@ -107,7 +107,6 @@ body {
     }
     ul {
       @extend .zero-space;
-      // text-align: right;
       float: right;
       list-style-type: none;
       margin-right: 5px;
@@ -269,9 +268,6 @@ body {
           opacity: 0.7;
           left: 3px;
           animation: moveDown 1s ease-in-out infinite;
-          &:hover {
-            opacity: 1;
-          }
           @include mini, landscape{
             zoom: 90%;
           }
