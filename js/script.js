@@ -4,7 +4,7 @@ $(document).ready(function() {
     return $('nav').outerHeight() > 60 ? 0 : $('nav').outerHeight();
   }
 
-  $(window).on('load resize', function() {
+  function setHomePage() {
     var vpHeight = $(window).height();
     $('#home').css('height', vpHeight);
     $('#home h1').css('margin-top', vpHeight / 2 - 100);
@@ -13,6 +13,11 @@ $(document).ready(function() {
       left: $(window).width() / 2 - 35 + (navSize() > 0 ? 0 : 25)
     });
     $('#home > *').show();
+  }
+
+  $(window).on({
+    load: setHomePage(),
+    resize: setHomePage
   });
 
   function moveToSection($section) {
