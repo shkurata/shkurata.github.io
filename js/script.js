@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $("#currentYear").text(new Date().getFullYear());
+
     function navSize() {
         return $("nav").outerHeight() > 60 ? 0 : $("nav").outerHeight();
     }
