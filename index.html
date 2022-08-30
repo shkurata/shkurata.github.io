@@ -1,159 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:url" content="http://fanfaars.com/contact" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta property="og:url" content="http://fanfaars.com/contact" />
+        <title>Portfolio</title>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
-  <body>
-    <img src="images/bg-image.jpeg" id="imgBg" />
-      <nav>
-      <ul>
-        <li><a href="#home" class="activeNavItem">
-              <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-              <span>Nikolay Neykov</span>
-            </a>
-        </li>
-        <li><a href="#portfolio">
-              <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
-              <span>Portfolio</span>
-            </a>
-        </li>
-        <li><a href="#about">
-              <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
-              <span>About</span>
-            </a>
-        </li>
-        <li><a href="#contact">
-            <i class="fa fa-id-card-o fa-2x" aria-hidden="true"></i>
-            <span>Contact</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <main>
-      <section id="home">
-        <h1>Hello, I'm Nikolay Neykov</h1>
-        <p>A passionate explorer of web development technologies</p>
-        <div class="arrow">
-          <i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i>
-        </div>
-      </section>
-      <section id="portfolio">
-        <h1>Some of my projects</h1>
-        <div class="collection">
-          <div class="case">
-              <p>Game of Life</p>
-              <a href="http://codepen.io/shkurata/full/ObowRr/" target="_blank">
-                <img src="images/game_of_life.jpg" />
-              </a>
-          </div>
-          <div class="case">
-              <p>Calculator</p>
-              <a href="http://codepen.io/shkurata/full/BjNxbN/" target="_blank">
-                <img src="images/calculator.jpg" />
-              </a>
-          </div>
-          <div class="case">
-              <p>Camper Leaderboard</p>
-              <a href="https://codepen.io/shkurata/full/LNvZOq/" target="_blank">
-                <img src="images/leader_board.jpg" />
-              </a>
-          </div>
-          <div class="case">
-              <p>Pomodoro Clock</p>
-              <a href="http://codepen.io/shkurata/full/PPMepW/" target="_blank">
-                <img src="images/pomodoro.jpg" />
-              </a>
-          </div>
-          <div class="case">
-              <p>Random Quotes</p>
-              <a href="http://codepen.io/shkurata/full/MaNgQa/" target="_blank">
-                <img src="images/random_quote.jpg" />
-              </a>
-          </div>
-          <div class="case">
-              <p>Simon Game</p>
-              <a href="https://codepen.io/shkurata/full/dGeYQe/" target="_blank">
-                <img src="images/simon_says.jpg" />
-              </a>
-          </div>
-          <div class="case">
-              <p>Tic Tac Toe Game</p>
-              <a href="http://codepen.io/shkurata/full/OMQQvw/" target="_blank">
-                <img src="images/tic_tac_toe.jpg" />
-              </a>
-          </div><div class="case">
-              <p>Twitch Streamers</p>
-              <a href="http://codepen.io/shkurata/full/RrjaEd/" target="_blank">
-                <img src="images/twitch_streamers.jpg" />
-              </a>
-          </div><div class="case">
-              <p>Wikipedia Viewer</p>
-              <a href="http://codepen.io/shkurata/full/ZQLPNL/" target="_blank">
-                <img src="images/wiki_search.jpg" />
-              </a>
-          </div>
-        </div>
-        <a href="https://www.freecodecamp.com/shkurata" target="_blank">
-          <p>click here to view more</p>
-        </a>
-      </section>
-      <section id="about">
-        <article>
-          <h1>About me</h1>
-          <img src="images/me.jpg" id="me" alt="Nikolay Neykov">
-          <p>I'm a self-taught developer who never stops learning,
-             currently on the way of becoming a Full Stack Web Developer
-             through the Free Code Camp's curriculum. I have experience
-             with HTML, CSS/SASS,
-             Bootstrap, JavaScript, jQuery and React.JS</p>
-        </article>
-      </section>
-      <section id="contact">
-        <h1>Contact Me</h1>
-        <p>Want to get in touch? Feel free to contact me by this form!
-           You can ask more information about me,
-           my works, jobs, plans and everything else.</p>
-        <form id="sendMessage">
-          <div id="nameAndEmail">
-            <label for="name">Name</label>
-            <input type="text" name="name" required>
-            <label for="email">Email</label>
-            <input type="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
-            <label for="phone">Phone Number</label>
-            <input type="text" name="number">
-            <input type="hidden" name="_subject" value="Portfolio website contact"/>
-            <input type="text" name="_gotcha" style="display:none" />
-          </div>
-          <div id="message">
-            <label for="message">Message</label>
-            <textarea name="message" rows="7" cols="50" required></textarea>
-          </div>
-          <div id="submit">
-            <input type="submit" value="Send">
-            <div id="info">
-                <div class="error">Ops, there was an error.</div>
-                <div class="success">Message sent!</div>
-                <div class="send">Sending message...</div>
-            </div>
-          </div>
-        </form>
-      </section>
-      <section class="footer">
-        <a href="https://github.com/shkurata" target="_blank"><i class="fa fa-github fa-3x"></i></a>
-        <a href="https://twitter.com/shkuriagata" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
-        <a href="https://www.facebook.com/nikolai.neikov" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
-        <a href="https://be.linkedin.com/in/nikolay-neykov" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a>
-        <p>All Rights Reserved &copy 2017 Nikolay Neykov </p>
-      </section>
-    </main>
-  </body>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Comfortaa"
+            rel="stylesheet"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <img src="images/bg-image.jpeg" id="imgBg" />
+        <nav>
+            <ul>
+                <li>
+                    <a href="#home" class="activeNavItem">
+                        <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+                        <span>Nikolay Neykov</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio">
+                        <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <i class="fa fa-id-card-o fa-2x" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <section id="home">
+                <h1>Hello, I'm Nikolay Neykov</h1>
+                <p>A passionate explorer of web development technologies</p>
+                <div class="arrow">
+                    <i class="fa fa-chevron-down fa-4x" aria-hidden="true"></i>
+                </div>
+            </section>
+            <section id="portfolio">
+                <h1>Some of my projects</h1>
+                <div class="collection">
+                    <div class="case">
+                        <p>Game of Life</p>
+                        <a
+                            href="http://codepen.io/shkurata/full/ObowRr/"
+                            target="_blank"
+                        >
+                            <img src="images/game_of_life.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Calculator</p>
+                        <a
+                            href="http://codepen.io/shkurata/full/BjNxbN/"
+                            target="_blank"
+                        >
+                            <img src="images/calculator.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Camper Leaderboard</p>
+                        <a
+                            href="https://codepen.io/shkurata/full/LNvZOq/"
+                            target="_blank"
+                        >
+                            <img src="images/leader_board.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Pomodoro Clock</p>
+                        <a
+                            href="http://codepen.io/shkurata/full/PPMepW/"
+                            target="_blank"
+                        >
+                            <img src="images/pomodoro.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Random Quotes</p>
+                        <a
+                            href="http://codepen.io/shkurata/full/MaNgQa/"
+                            target="_blank"
+                        >
+                            <img src="images/random_quote.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Simon Game</p>
+                        <a
+                            href="https://codepen.io/shkurata/full/dGeYQe/"
+                            target="_blank"
+                        >
+                            <img src="images/simon_says.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Tic Tac Toe Game</p>
+                        <a
+                            href="http://codepen.io/shkurata/full/OMQQvw/"
+                            target="_blank"
+                        >
+                            <img src="images/tic_tac_toe.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Twitch Streamers</p>
+                        <a
+                            href="http://codepen.io/shkurata/full/RrjaEd/"
+                            target="_blank"
+                        >
+                            <img src="images/twitch_streamers.jpg" />
+                        </a>
+                    </div>
+                    <div class="case">
+                        <p>Wikipedia Viewer</p>
+                        <a
+                            href="http://codepen.io/shkurata/full/ZQLPNL/"
+                            target="_blank"
+                        >
+                            <img src="images/wiki_search.jpg" />
+                        </a>
+                    </div>
+                </div>
+                <a href="https://www.freecodecamp.com/shkurata" target="_blank">
+                    <p>click here to view more</p>
+                </a>
+            </section>
+            <section id="about">
+                <article>
+                    <h1>About me</h1>
+                    <img src="images/me.jpg" id="me" alt="Nikolay Neykov" />
+                    <p>
+                        I'm a self-taught developer who never stops learning,
+                        currently on my way of becoming a Full Stack Web
+                        Developer. I started with the Free Code Camp's Web
+                        Developers curriculum and a 6 months full-time
+                        JavaScript course, then I started working on different
+                        private projects. I have experience with HTML, CSS,
+                        Tailwind, Bootstrap, JavaScript, NodeJS, ExpressJS,
+                        MongoDB, Angular, ReactJS, VueJS, Github, Docker and
+                        Kubernetes.
+                    </p>
+                </article>
+            </section>
+            <section id="contact">
+                <h1>Contact Me</h1>
+                <p>
+                    Want to get in touch? Feel free to contact me by this form!
+                    You can ask more information about me, my works, jobs, plans
+                    and everything else.
+                </p>
+                <form id="sendMessage">
+                    <div id="nameAndEmail">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" required />
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                            required
+                        />
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="number" />
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Portfolio website contact"
+                        />
+                        <input
+                            type="text"
+                            name="_gotcha"
+                            style="display: none"
+                        />
+                    </div>
+                    <div id="message">
+                        <label for="message">Message</label>
+                        <textarea
+                            name="message"
+                            rows="7"
+                            cols="50"
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6Lfydb4hAAAAAC8VvZFTFQKWU4k9pLieBwvImSUw"></div>
+                    <div id="submit">
+                        <input type="submit" value="Send" />
+                        <div id="info">
+                            <div class="error">Ops, there was an error.</div>
+                            <div class="success">Message sent!</div>
+                            <div class="send">Sending message...</div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="footer">
+                <a href="https://github.com/shkurata" target="_blank"
+                    ><i class="fa fa-github fa-3x"></i
+                ></a>
+                <a href="https://twitter.com/shkuriagata" target="_blank"
+                    ><i class="fa fa-twitter fa-3x"></i
+                ></a>
+                <a
+                    href="https://be.linkedin.com/in/nikolay-neykov"
+                    target="_blank"
+                    ><i class="fa fa-linkedin fa-3x"></i
+                ></a>
+                <p>All Rights Reserved &copy 2017 Nikolay Neykov</p>
+            </section>
+        </main>
+    </body>
 </html>
